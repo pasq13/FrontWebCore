@@ -1,6 +1,7 @@
 <div
   *ngIf="conectado == true"
 >
+<app-navbar (conectado)="logOut($event)"></app-navbar>
 <router-outlet></router-outlet>
 </div>
 <div

@@ -1,0 +1,21 @@
+<mat-grid-list id="main" [cols]="5" rowHeight="400px" gutterSize="10px" style="justify-content:center;">
+  <mat-grid-tile style="height: calc(600px- 24px)" [colspan]="5" [rowspan]="1">
+    <mat-card class="card" style="max-width: 500px; max-height: 500px;text-align:center;">
+      <mat-card-header>
+        <div mat-card-avatar class="example-header-image"></div>
+        <mat-card-title style="text-transform: capitalize;">{{ heroe.nombre }}</mat-card-title>
+        <mat-card-subtitle style="text-transform: capitalize;">{{ heroe.casaheroe }}</mat-card-subtitle>
+      </mat-card-header>
+      <section>
+        <div fxLayoutAlign="center center">
+          <img mat-card-image [src]="heroe.img" alt="{{heroe.nombre}}" style="max-width: 250px; max-height: 150px;" />
+
+        </div>
+      </section>
+      <mat-card-content>
+        <p>Su primera aparición fue en {{heroe.aparicion | date:"dd/MM/yyyy"}}
+        </p>
+      </mat-card-content>
+    </mat-card>
+  </mat-grid-tile>
+</mat-grid-list>

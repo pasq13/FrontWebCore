@@ -1,1 +1,17 @@
-<p>navbar works!</p>
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <span>
+      <a mat-button [routerLink]="'/casas/todas'"> VS </a>
+      <a mat-button [routerLink]="'/casas/marvel'"> Marvel </a>
+      <a mat-button [routerLink]="'/casas/dc'"> DC </a>
+
+    </span>
+      <span class="menu-spacer"></span>
+      <div>
+        <span>
+           <a mat-button [routerLink]="'/'" (click)="logOut()"> Cerrar Sesion </a>
+
+        </span>
+      </div>
+</mat-toolbar-row>
+</mat-toolbar>

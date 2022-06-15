@@ -7,6 +7,7 @@ import { SharedService } from '../shared.service';
 @Injectable({
   providedIn: 'root'
 })
+//servicio que añade la autenticacion Bearer a los headers de las peticiones
 export class AuthInterceptorService implements HttpInterceptor {
 
   constructor(private authenticationService: SharedService,private router: Router) { }

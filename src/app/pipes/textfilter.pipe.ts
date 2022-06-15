@@ -4,6 +4,7 @@ import { Heroe } from '../interfaces/heroe';
 @Pipe({
   name: 'textfilter'
 })
+//pipe para filtrar los heroes por nombre
 export class TextfilterPipe implements PipeTransform {
 
   transform(heroes: Heroe[], filter: string): Heroe[] {

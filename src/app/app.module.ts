@@ -7,6 +7,8 @@ import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatCardModule } from '@angular/material/card';
+import { MatToolbarModule } from '@angular/material/toolbar';
+
 import { LayoutModule } from '@angular/cdk/layout';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatGridListModule } from '@angular/material/grid-list';
@@ -21,6 +23,7 @@ import { SharedService } from './shared.service';
 import { AuthInterceptorService } from './interceptor/auth-interceptor.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TextfilterPipe } from './pipes/textfilter.pipe';
+import { EditheroeComponent } from './components/editheroe/editheroe.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,6 +32,7 @@ import { TextfilterPipe } from './pipes/textfilter.pipe';
     HeroeComponent,
     NavbarComponent,
     TextfilterPipe,
+    EditheroeComponent,
   ],
   imports: [
     BrowserModule,
@@ -45,6 +49,7 @@ import { TextfilterPipe } from './pipes/textfilter.pipe';
     FlexLayoutModule,
     MatCardModule,
     MatGridListModule,
+    MatToolbarModule,
   ],
   providers: [
     SharedService,

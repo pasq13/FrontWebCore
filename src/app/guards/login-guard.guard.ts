@@ -5,6 +5,7 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
+//guard que protege el acceso a vistas si el token ha expirado
 export class LoginGuardGuard implements CanActivate{
   constructor(private router: Router) { }
 

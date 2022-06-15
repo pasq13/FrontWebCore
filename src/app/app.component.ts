@@ -29,4 +29,11 @@ export class AppComponent implements OnInit{
   login(event: boolean) {
     this.conectado = event;
   }
+  logOut(event:any) {
+    this.conectado = event;
+    this.token = '';
+    localStorage.removeItem('usuario');
+    localStorage.removeItem('token');
+    localStorage.clear();
+  }
 }

@@ -1,4 +1,5 @@
-<mat-grid-list id="toolbarmain"  [cols]="4" rowHeight="80px" gutterSize="1rem">
+<mat-grid-list id="toolbarmain"  [cols]="columns" rowHeight="60px" gutterSize="1rem">
+  <mat-grid-tile [colspan]="1" [rowspan]="1" *ngIf="columns>3"></mat-grid-tile>
   <mat-grid-tile [colspan]="1" [rowspan]="1">
     <mat-form-field>
       <input matInput [(ngModel)]="filterSearch" placeholder="Busqueda por nombre" />
@@ -6,11 +7,11 @@
   </mat-grid-tile>
 </mat-grid-list>
 
-<mat-grid-list id="main"  [cols]="4" rowHeight="400px" gutterSize="10px" class="scrollforall">
+<mat-grid-list id="main"  [cols]="columns" rowHeight="400px" gutterSize="10px" class="scrollforall">
   <mat-grid-tile style="height: calc(600px- 24px)" [colspan]="1" [rowspan]="1" *ngFor="
         let heroe of heroes | textfilter: filterSearch
       ">
-    <app-heroe [heroe]="heroe"></app-heroe>
+    <app-heroe [heroe]="heroe" [casa]="casa"></app-heroe>
   </mat-grid-tile>
 </mat-grid-list>
 <!-- | textfilter: filterSearch -->

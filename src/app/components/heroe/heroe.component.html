@@ -1,8 +1,9 @@
-<mat-card class="card"  (click)="detalles(heroe)" style="max-width: 400px; max-height: 400px;" >
+<mat-card class="card"  (click)="detalles(heroe)" style="max-width: 400px; max-height: 400px;cursor:pointer;" >
   <mat-card-header>
     <div mat-card-avatar class="example-header-image"></div>
     <mat-card-title style="text-transform: capitalize;">{{ heroe.nombre }}</mat-card-title>
-    <mat-card-subtitle style="text-transform: capitalize;">{{ heroe.casaheroe }}</mat-card-subtitle>
+    <mat-card-subtitle style="text-transform: capitalize;" *ngIf="casa=='todas'">{{ heroe.casaheroe }}</mat-card-subtitle>
+    <mat-card-subtitle style="text-transform: capitalize;" *ngIf="casa!='todas'"><br></mat-card-subtitle>
   </mat-card-header>
   <section>
   <div  fxLayoutAlign="center center">
@@ -16,7 +17,7 @@
 </div>
 </section>
   <mat-card-content >
-    <p>Su primera aparicion fue en {{heroe.aparicion | date:"MM/dd/yy"}}
+    <p>Su primera aparicion fue en {{heroe.aparicion | date:"dd/MM/yyyy"}}
     </p>
   </mat-card-content>
 </mat-card>

@@ -9,6 +9,7 @@ import { map } from 'rxjs/operators';
 })
 export class SharedService {
 
+
   readonly ApiUrl = 'http://localhost:5000/api/';
 
   header: any;
@@ -32,8 +33,14 @@ export class SharedService {
       return user;
     }));
   }
-  getHeroes() {
-    return this.http.get<any>(this.ApiUrl + 'heroes/todas')
+  getHeroes(casa:any) {
+    return this.http.get<any>(this.ApiUrl + 'heroes/'+casa)
+    .pipe(map(heroes => {
+      return heroes;
+    }));
+  }
+  getOneHeroe(casa: string, id: number) {
+    return this.http.get<any>(this.ApiUrl + 'heroes/'+casa+'/'+id)
     .pipe(map(heroes => {
       return heroes;
     }));
