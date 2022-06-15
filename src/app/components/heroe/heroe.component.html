@@ -1,0 +1,23 @@
+<mat-card class="card"  (click)="detalles(heroe)" style="max-width: 400px; max-height: 400px;" >
+  <mat-card-header>
+    <div mat-card-avatar class="example-header-image"></div>
+    <mat-card-title style="text-transform: capitalize;">{{ heroe.nombre }}</mat-card-title>
+    <mat-card-subtitle style="text-transform: capitalize;">{{ heroe.casaheroe }}</mat-card-subtitle>
+  </mat-card-header>
+  <section>
+  <div  fxLayoutAlign="center center">
+  <img
+    mat-card-image
+    [src]="heroe.img"
+    alt="{{heroe.nombre}}"
+    style="max-width: 250px; max-height: 150px;"
+  />
+
+</div>
+</section>
+  <mat-card-content >
+    <p>Su primera aparicion fue en {{heroe.aparicion | date:"MM/dd/yy"}}
+    </p>
+  </mat-card-content>
+</mat-card>
+

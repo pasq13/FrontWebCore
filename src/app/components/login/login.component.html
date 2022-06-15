@@ -1,0 +1,49 @@
+<div *ngIf="!usuario"  class="container-login">
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <h2 fxLayoutAlign="center">Conectarse</h2>
+  <mat-error *ngIf="loginInvalid">
+    El usuario no se encuentra en la base de datos
+  </mat-error>
+  <mat-form-field appearance="fill" fxFill="100">
+    <mat-label for="usuario">Usuario</mat-label>
+    <input
+      matInput
+      placeholder="Usuario"
+      type="text"
+      #usuario
+      formControlName="usuario"
+      required
+    />
+    <mat-error>  </mat-error>
+  </mat-form-field>
+  <mat-form-field appearance="fill" fxFill="100">
+    <mat-label for="password">Contraseña</mat-label>
+    <input
+      matInput
+      [type]="hide ? 'password' : 'text'"
+      formControlName="password"
+      #password
+    />
+    <button
+      mat-icon-button
+      matSuffix
+      type="button"
+      (click)="hide = !hide"
+      [attr.aria-label]="'Hide password'"
+      [attr.aria-pressed]="hide"
+    >
+      <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
+    </button>
+  </mat-form-field>
+  <button
+    mat-raised-button
+    class="botonadd"
+    color="primary"
+    type="submit"
+    fxFill="100"
+  >
+    Conectarse
+  </button>
+</form>
+</div>
+<router-outlet *ngIf="usuario" ></router-outlet>
